@@ -1,1 +1,201 @@
-<h1>good things are coming...</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saber Company</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family:arial;
+        }
+        .nav{
+            position: fixed;
+            height: 50px;
+            width: 100%;
+            top: 0;
+            background-color: rgba(255, 192, 203, 0.5);
+            backdrop-filter: blur(5px);
+        }
+        .nav .rest{
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .logo{
+            color: rgb(255, 0, 128);
+            text-shadow: rgb(255, 0, 128) 0px 0px 10px;
+            font-style: italic;
+            margin-left: 10px;
+            font-size: 24px;
+        }
+        .nav a{
+            margin-left: 10px;
+            color: purple;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+        .nav a:hover{
+            color: white;
+            text-shadow: rgb(255, 0, 128) 0px 0px 5px;
+        }
+        .links{
+            margin-left: 5px;
+        }
+        .body{
+            padding-bottom: 50px;
+            padding-top: 20px;
+            margin: 10px;
+        }
+        html{
+            scrollbar-width: none;
+        }
+        h2{
+            color: hotpink;
+        }
+        footer{
+            background-color: rgba(255, 192, 203, 0.5);
+            backdrop-filter: blur(5px);
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+            left: 0px;
+        }
+        .menubtn,.menu {
+            display: none;
+        }
+        .menu{
+            width: 100%;
+        }
+        .banner{
+            background-color: purple;
+            background-image: url("eax.jpeg");
+            width: 100%;
+            height: 600px;
+            background-size: cover;
+        }
+        .edit{
+            position: absolute;
+            border: 4px solid hotpink;
+            background-color: hotpink;
+            color: white;
+            top: 10px;
+            left: 10px;
+        }
+        @media (max-width: 1000px) {
+            .links{
+                display: none;
+            }
+            .menubtn{
+                position: absolute;
+                right: 15px;
+                color: purple;
+                font-size: 20px;
+                margin-left: 10px;
+                display: block;
+            }
+            .banner{
+                padding-top: 50px;
+                width: 100%;
+                height: 200px;
+            }
+            .edit{
+                width: 200px;
+                height: auto;
+            }
+            .edit video{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div  class="nav">
+        <div class="rest">
+            <span class="logo">Saber Company</span>
+            <div class="links">
+                <a href="#">home</a>
+                <a href="VOA/index.html">afghani chips (VOA)</a>
+                <a href="jamal.html">jamal</a>
+                <a href="#">mama lana</a>
+                <a href="validi.html">mohandes validi</a>
+                <a href="mario.html">jamal mini game</a>
+            </div>
+            <div class="menubtn">▼</div>
+        </div>
+        <div class="menu"></div>
+    </div>
+    <div class="banner">
+    </div>
+    <div class="edit">
+        <video src="edit.mp4" controls></video>
+        <br>
+        <span>javid's sarabi edit</span>
+        <a href="javascript:void(0)" onclick="event.srcElement.parentElement.remove()" style="float: right;">close</a>
+    </div>
+    <div class="body">
+        <h2>who are saber and farhad?</h2>
+        <br>
+        <li>saber is boss</li>
+        <li>farhad sells dildos</li>
+        <hr>
+        <h2>taliban news international</h2>
+        <br>
+        <p>two idiots went fishing in a dry pond and catched nothing!!! LOL</p>
+        <hr>
+        <h2><a href="VOA/index.html" style="color: hotpink;">Voice of Afghanistan (VOA)</a></h2>
+        <br>
+        <p>a migrant rejected chips from teacher</p>
+        <hr>
+        <h2><a href="validi.html" style="color: hotpink;">validi's islamic bullshit</a></h2>
+        <br>
+        <p>a fucking idiot by the of khalid will try to make nasa islamic and 6x7=48</p>
+        <hr>
+        <h2><a href="jamal.html" style="color: hotpink;">Jamalism</a></h2>
+        <br>
+        <p>the good words of jamal and jamalism</p>
+        <p><i><b>no ex no next for me jamal is the best</b></i></p>
+        <hr>
+        <h2><a href="#" style="color: hotpink;">Karl Marx (Worker Afshin)</a></h2>
+        <br>
+        <p>we shall rename naisar to binandehgrad and spread his bullshit ideology</p>
+        <hr>
+        <h2><a href="nasa/index.html" style="color: hotpink;">Validi’s Islamic Nasa</a></h2>
+        <br>
+        <p>Nasa is now Islamic...</p>
+        <hr>
+        <h2><a href="yadegankar/index.html" style="color: hotpink;">YadeGanKar 1</a></h2>
+        <br>
+        <p>yade goes to mars</p>
+        <footer>
+            <marquee behavior="" direction="">
+                <h1 style="background:-webkit-linear-gradient(yellow, violet);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">sponsored by MD</h1>
+            </marquee>
+        </footer>
+    </div>
+    <script>
+        let menu = document.querySelector(".menu")
+        let menubtn = document.querySelector(".menubtn")
+        let itms = ""
+        document.querySelector(".links").innerHTML.split("\n").map(e => e+"<br>").forEach((e)=>{
+            itms += e
+        })
+        menu.innerHTML = itms
+        let mopen = false
+        menubtn.addEventListener("click",()=>{
+            if(mopen == false){
+                menu.style.display = "block"
+                document.querySelector(".nav").style.height = 50+document.querySelector(".menu").offsetHeight +"px"
+                menubtn.innerHTML = "▲"
+                mopen = true
+            }else{
+                menu.style.display = "none"
+                document.querySelector(".nav").style.height = 50+"px"
+                menubtn.innerHTML = "▼"
+                mopen = false
+            }
+        })
+    </script>
+</body>
+</html>
